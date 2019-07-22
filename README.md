@@ -4,6 +4,9 @@ API REST de ejemplo para simular un sencillo servicio de banca online. El objeti
 
 Se desarrollará también un cliente de una sola página (SPA) para interactuar con la API. Dicho cliente está disponible en https://github.com/pedroprieto/cliente-bank-app
 
+## Demo
+http://nueva-env.qyt5jae7qv.eu-west-1.elasticbeanstalk.com/api/clients
+
 ## Instalación
 1. Clonar repositorio
 2. Instalar dependencias de .NET
