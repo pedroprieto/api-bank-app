@@ -39,3 +39,6 @@ msbuild.wrn
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# Archivo db.config de conexión a la base de datos
+api-bank-app/.ebextensions/db.config

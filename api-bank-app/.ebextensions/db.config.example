@@ -1,0 +1,4 @@
+# Crear un archivo con nombre db.config y actualizar datos de conexión a la BD
+commands:
+  set_environment: 
+    command: setx ConnectionStrings__BankDatabase "server=HOST_BASEDEDATOS_RDS;port=PUERTO_BASEDATOS_RDS;user=USUARIO_BASEDATOS_RDS;password=PASSWORD_BASEDATOS_RDS;database=NOMBRE_BASEDATOS_RDS" /M
