@@ -55,6 +55,7 @@ dotnet eb deploy-environment
 11. Actualizar base de datos en RDS. (Nota: este punto se puede mejorar para que se pueda realizar de manera automática mediante las migraciones de .NET. Así, cada vez que se suba una nueva versión de la aplicación se actualizará la base de datos automáticamente)
     1. Conceder acceso público a la base de datos de RDS
     2. Crear en el sistema operativo local una variable de entorno con los datos de conexión de la base de datos de RDS
+
         ```bash
         # Para Windows
         setx ConnectionStrings__BankDatabase "server=HOST_BASEDEDATOS_RDS;port=PUERTO_BASEDATOS_RDS;user=USUARIO_BASEDATOS_RDS;password=PASSWORD_BASEDATOS_RDS;database=NOMBRE_BASEDATOS_RDS" /M
@@ -62,7 +63,8 @@ dotnet eb deploy-environment
         # Para Linux
         export ConnectionStrings__BankDatabase="server=HOST_BASEDEDATOS_RDS;port=PUERTO_BASEDATOS_RDS;user=USUARIO_BASEDATOS_RDS;password=PASSWORD_BASEDATOS_RDS;database=NOMBRE_BASEDATOS_RDS"
         ```
-    De esta manera también se puede testear la aplicación local con la base de datos remota
+
+        De esta manera también se puede testear la aplicación local con la base de datos remota
     3. Actualizar la base de datos desde Visual Studio o mediante el comando `dotnet ef database update`. Al existir la variable de entorno se actualizará la base de datos remota.
 
 ### AWS Lambda
