@@ -47,7 +47,7 @@ Se desarrollará también un cliente de una sola página (SPA) para interactuar 
 6. Crear una base de datos en AWS RDS de tipo MySQL. Para la práctica es recomendable utilizar MariaDB y seleccionar una instancia `t2.micro`.
 7. Anotar los datos de conexión a la base de datos de RDS
 8. Configurar el grupo de seguridad de la base de datos para que permita el acceso desde cualquier IP de la VPC para que la aplicación Beanstalk tenga acceso. Abrir el puerto de entrada 3306.
-9. Crear archivo `api-bank-app/.ebextensions/db.config` a partir del que se proporciona como ejemplo en `api-bank-app/.ebextensions/db.config.example** utilizando los datos de conexión de la base de datos de RDS
+9. Crear archivo `api-bank-app/.ebextensions/db.config` a partir del que se proporciona como ejemplo en `api-bank-app/.ebextensions/db.config.example` utilizando los datos de conexión de la base de datos de RDS
 10. Publicar la aplicación en AWS Beanstalk indicando el **nombre de la aplicación** y el **nombre del entorno** de AWS BeanStalk creados.
     ```bash
     dotnet eb deploy-environment
@@ -76,7 +76,7 @@ Se supone que en este punto ya se dispone del usuario de IAM, se ha clonado el r
     - `AWSLambdaFullAccess`
     - `AmazonAPIGatewayAdministrator`
 2. Crear un bucket en AWS S3 y anotar su nombre
-3. Modificar el arhivo `serverless.template` para modificar la línea correspondiente a la variable de entorno `ConnectionStrings__BankDatabase` con los datos de acceso a la base de datos de RDS:
+3. Crear archivo `api-bank-app/serverless.template` a partir del que se proporciona como ejemplo en `api-bank-app/serverless.template.example`. Modificar la línea correspondiente a la variable de entorno `ConnectionStrings__BankDatabase` con los datos de acceso a la base de datos de RDS.
     ```bash
     "ConnectionStrings__BankDatabase": "server=HOST_BASEDEDATOS_RDS;port=PUERTO_BASEDATOS_RDS;user=USUARIO_BASEDATOS_RDS;password=PASSWORD_BASEDATOS_RDS;database=NOMBRE_BASEDATOS_RDS"
     ```

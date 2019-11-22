@@ -40,5 +40,8 @@ msbuild.wrn
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
-# Archivo db.config de conexión a la base de datos
+# Archivo db.config de conexión a la base de datos para despliegue en BeanStalk
 api-bank-app/.ebextensions/db.config
+
+# Archivo serverless.template con la variable de entorno de conexión a la base de datos para despliegue en Lambda
+api-bank-app/serverless.template
