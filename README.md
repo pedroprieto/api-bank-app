@@ -7,32 +7,32 @@ Se desarrollará también un cliente de una sola página (SPA) para interactuar 
 ## Instalación
 1. Clonar repositorio
 2. Acceder a la carpeta del repositorio
-```bash
-cd api-bank-app
-```
+    ```bash
+    cd api-bank-app
+    ```
 3. Instalar dependencias de .NET
-```bash
-dotnet restore
-```
+    ```bash
+    dotnet restore
+    ```
 4. Instalar base de datos MySQL en el sistema. Anotar los parámetros de conexión
 5. Acceder al directorio del proyecto
-```bash
-cd api-bank-app
-```
+    ```bash
+    cd api-bank-app
+    ```
 6. Actualizar los datos de conexión a la base de datos local en archivo `api-bank-app/appsettings.json`
-```json
-  "ConnectionStrings": {
-    "BankDatabase": "server=localhost;port=3306;user=root;password=;database=bank"
-  },
-```
+    ```json
+    "ConnectionStrings": {
+        "BankDatabase": "server=localhost;port=3306;user=root;password=;database=bank"
+    },
+    ```
 7. Actualizar base de datos a través de Entity Framework
-```bash
-dotnet ef database update
-```
+    ```bash
+    dotnet ef database update
+    ```
 8. Lanzar aplicación
-```bash
-dotnet run
-```
+    ```bash
+    dotnet run
+    ```
 9. Acceder a la API en `http://localhost:5000/api/clients`
 
 ## Instrucciones de despliegue
@@ -49,9 +49,9 @@ dotnet run
 8. Configurar el grupo de seguridad de la base de datos para que permita el acceso desde cualquier IP de la VPC para que la aplicación Beanstalk tenga acceso. Abrir el puerto de entrada 3306.
 9. Crear archivo `api-bank-app/.ebextensions/db.config` a partir del que se proporciona como ejemplo en `api-bank-app/.ebextensions/db.config.example** utilizando los datos de conexión de la base de datos de RDS
 10. Publicar la aplicación en AWS Beanstalk indicando el **nombre de la aplicación** y el **nombre del entorno** de AWS BeanStalk creados.
-```bash
-dotnet eb deploy-environment
-```
+    ```bash
+    dotnet eb deploy-environment
+    ```
 11. Actualizar base de datos en RDS. (Nota: este punto se puede mejorar para que se pueda realizar de manera automática mediante las migraciones de .NET. Así, cada vez que se suba una nueva versión de la aplicación se actualizará la base de datos automáticamente)
     1. Conceder acceso público a la base de datos de RDS
     2. Crear en el sistema operativo local una variable de entorno con los datos de conexión de la base de datos de RDS
@@ -77,10 +77,10 @@ Se supone que en este punto ya se dispone del usuario de IAM, se ha clonado el r
     - `AmazonAPIGatewayAdministrator`
 2. Crear un bucket en AWS S3 y anotar su nombre
 3. Modificar el arhivo `serverless.template` para modificar la línea correspondiente a la variable de entorno `ConnectionStrings__BankDatabase` con los datos de acceso a la base de datos de RDS:
-  ```bash
-"ConnectionStrings__BankDatabase": "server=HOST_BASEDEDATOS_RDS;port=PUERTO_BASEDATOS_RDS;user=USUARIO_BASEDATOS_RDS;password=PASSWORD_BASEDATOS_RDS;database=NOMBRE_BASEDATOS_RDS"
-  ```
+    ```bash
+    "ConnectionStrings__BankDatabase": "server=HOST_BASEDEDATOS_RDS;port=PUERTO_BASEDATOS_RDS;user=USUARIO_BASEDATOS_RDS;password=PASSWORD_BASEDATOS_RDS;database=NOMBRE_BASEDATOS_RDS"
+    ```
 4. Publicar la aplicación en AWS Lambda indicando el **bucket de S3** creado anteriormente.
-```bash
-dotnet lambda deploy-serverless
-```
+    ```bash
+    dotnet lambda deploy-serverless
+    ```
