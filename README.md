@@ -1,8 +1,15 @@
 # API REST web de banca online
 ## Descripción
-API REST de ejemplo para simular un sencillo servicio de banca online. El objetivo es utilizar una aplicación de muestra para su despliegue de manera serverless (AWS Lambda o Azure Functions). Por sencillez se deja sin implementar todo el tema de autenticación.
+API REST de ejemplo para simular un sencillo servicio de banca online. El objetivo es utilizar una aplicación de muestra para su despliegue en un **servidor web** (con AWS Beanstalk) o de manera **serverless** (con AWS Lambda). Por sencillez se deja sin implementar todo el tema de autenticación.
 
 Se desarrollará también un cliente de una sola página (SPA) para interactuar con la API. Dicho cliente está disponible en https://github.com/pedroprieto/cliente-bank-app
+
+El esquema de la solución desplegada en un **servidor web** con **AWS Beanstalk** sería el siguiente:
+![Despliegue en AWS Beanstalk](./diagrama_beanstalk.png)
+
+
+El esquema de la solución desplegada de manera **serverless** con **AWS Lambda** sería el siguiente:
+![Despliegue en AWS Lambda](./diagrama_lambda.png)
 
 ## Instalación
 1. Clonar repositorio
