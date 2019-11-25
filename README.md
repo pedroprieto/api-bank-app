@@ -1,4 +1,8 @@
 # API REST web de banca online
+## Tutorial en Youtube
+Puedes ver el procedimiento de despliegue de la aplicación en este tutorial en Youtube:
+[![Tutorial en Youtube](https://img.youtube.com/vi/gPqthQb_I6o/0.jpg)](https://www.youtube.com/watch?v=gPqthQb_I6o)
+
 ## Descripción
 API REST de ejemplo para simular un sencillo servicio de banca online. El objetivo es utilizar una aplicación de muestra para su despliegue en un **servidor web** (con AWS Beanstalk) o de manera **serverless** (con AWS Lambda). Por sencillez se deja sin implementar todo el tema de autenticación.
 
@@ -14,6 +18,8 @@ El esquema de la solución desplegada de manera **serverless** con **AWS Lambda*
 ![Despliegue en AWS Lambda](./diagrama_lambda.png)
 
 ## Instalación
+La aplicación está realizada con [.NET Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+
 1. Clonar repositorio
 2. Acceder a la carpeta del repositorio
     ```bash
