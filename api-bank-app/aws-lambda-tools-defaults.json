@@ -8,11 +8,11 @@
     "profile": "default",
     "region": "",
     "configuration": "Release",
-    "s3-prefix": "CustomRuntimeAspNetCore30/",
+    "s3-prefix": "BankApi/",
     "template": "serverless.template",
     "template-parameters": "",
     "msbuild-parameters": "--self-contained true /p:AssemblyName=bootstrap",
     "framework": "netcoreapp3.0",
     "s3-bucket": "",
-    "stack-name": "CustomRuntimeAspNetCore30"
+    "stack-name": "BankApi"
 }
