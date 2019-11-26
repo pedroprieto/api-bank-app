@@ -105,7 +105,7 @@ Al finalizar la práctica hay que recordar **borrar todos los recursos creados e
 - Base de datos en la consola de RDS
 - Snapshots de la base de datos en la consola de RDS (una vez eliminada la base de datos)
 - Aplicación y entorno en la consola de Elastic BeanStalk
-- Aplicación y función Lambda (se puede borrar desde la consola de Lambda o, mejor, desde la consola de CloudFormation)
+- Recursos creados para la función Lambda en la consola de **CloudFormation**. Si se hace desde ahí se eliminará la **función Lambda** y los recursos creados en **API Gateway**.
 - Buckets en S3:
     - Bucket creado para la función Lambda
     - Bucket creado por BeanStalk (está protegido contra borrado; para eliminarlo hay que eliminar la política del bucket en: Permisos / Política del Bucket / Eliminar política del Bucket)
