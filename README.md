@@ -99,3 +99,14 @@ Se supone que en este punto ya se dispone del usuario de IAM, se ha clonado el r
     ```bash
     dotnet lambda deploy-serverless
     ```
+ 
+## Borrado de recursos
+Al finalizar la práctica hay que recordar **borrar todos los recursos creados en AWS**. Esto incluye:
+- Base de datos en la consola de RDS
+- Snapshots de la base de datos en la consola de RDS (una vez eliminada la base de datos)
+- Aplicación y entorno en la consola de Elastic BeanStalk
+- Aplicación y función Lambda (se puede borrar desde la consola de Lambda o, mejor, desde la consola de CloudFormation)
+- Buckets en S3:
+    - Bucket creado para la función Lambda
+    - Bucket creado por BeanStalk (está protegido contra borrado; para eliminarlo hay que eliminar la política del bucket en: Permisos / Política del Bucket / Eliminar política del Bucket)
+    - Bucket creado para el cliente
