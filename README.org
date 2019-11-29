@@ -1,7 +1,7 @@
 * API REST web de banca online
 ** Tutorial en Youtube
 Puedes ver el procedimiento de despliegue de la aplicación en este tutorial en Youtube:
-[[https://www.youtube.com/watch?v=gPqthQb_I6o][[[http://img.youtube.com/vi/gPqthQb_I6o/0.jpg]]]]
+[[https://www.youtube.com/watch?v=gPqthQb_I6o][[[file:https://img.youtube.com/vi/gPqthQb_I6o/0.jpg]]]]
 
 ** Descripción y arquitectura de la aplicación
 *** Descripción general
