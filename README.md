@@ -3,10 +3,28 @@
 Puedes ver el procedimiento de despliegue de la aplicación en este tutorial en Youtube:
 [![Tutorial en Youtube](https://img.youtube.com/vi/gPqthQb_I6o/0.jpg)](https://www.youtube.com/watch?v=gPqthQb_I6o)
 
-## Descripción
+## Descripción y arquitectura de la aplicación
+### Descripción general
 API REST de ejemplo para simular un sencillo servicio de banca online. El objetivo es utilizar una aplicación de muestra para su despliegue en un **servidor web** (con AWS Beanstalk) o de manera **serverless** (con AWS Lambda). Por sencillez se deja sin implementar todo el tema de autenticación.
 
+Se podrán realizar las siguientes operaciones:
+- Ver la lista de cuentas disponibles
+- Abrir una cuenta
+- Cerrar una cuenta
+- Ver los detalles de una cuenta (titular, autorizado)
+- Ver la lista de movimientos de una cuenta
+- Hacer un ingreso en una cuenta
+- Hacer un reintegro en una cuenta
+- Hacer una transferencia entre cuentas
+
 Se desarrollará también un cliente de una sola página (SPA) para interactuar con la API. Dicho cliente está disponible en https://github.com/pedroprieto/cliente-bank-app
+
+### Arquitectura
+La aplicación está estructurada en tres grandes bloques:
+
+- Web API :: Proporciona la lógica de la aplicación y el punto de acceso para interactuar con ella. La API puede dar servicio a clientes web, aplicaciones móviles o a plataformas de terceros que deseen interactuar con ella.
+- Cliente web SPA :: Se trata de un cliente de una sola página (SPA). En la primera carga se descargan todos los archivos necesarios para su funcionamiento (HTML, CSS, JavaScript) y a continuación se realizan llamadas a la API para obtener los datos correspondientes. El envío de datos entre cliente y API se realiza utilizando la tecnología [[https://es.wikipedia.org/wiki/AJAX][AJAX]].
+- Base de datos :: Almacena la lógica de negocio
 
 El esquema de la solución desplegada en un **servidor web** con **AWS Beanstalk** sería el siguiente:
 
