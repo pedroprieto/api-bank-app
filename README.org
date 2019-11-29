@@ -125,7 +125,7 @@ La aplicación está realizada con [[https://dotnet.microsoft.com/download/dotne
 7. Anotar los datos de conexión a la base de datos de RDS
 8. Configurar el grupo de seguridad de la base de datos para que permita el acceso desde cualquier IP de la VPC para que la aplicación Beanstalk tenga acceso. Abrir el puerto de entrada 3306.
 9. Crear archivo ~api-bank-app/.ebextensions/db.config~ a partir del que se proporciona como ejemplo en ~api-bank-app/.ebextensions/db.config.example~ utilizando los datos de conexión de la base de datos de RDS
-10. Publicar la aplicación en AWS Beanstalk indicando el **nombre de la aplicación** y el **nombre del entorno** de AWS BeanStalk creados.
+10. Publicar la aplicación en AWS Beanstalk indicando el *nombre de la aplicación* y el *nombre del entorno* de AWS BeanStalk creados.
     #+begin_src bash 
     dotnet eb deploy-environment
     #+end_src
@@ -156,7 +156,7 @@ Se supone que en este punto ya se dispone del usuario de IAM, se ha clonado el r
     #+begin_src json
     "ConnectionStrings__BankDatabase": "server=HOST_BASEDEDATOS_RDS;port=PUERTO_BASEDATOS_RDS;user=USUARIO_BASEDATOS_RDS;password=PASSWORD_BASEDATOS_RDS;database=NOMBRE_BASEDATOS_RDS"
     #+end_src
-4. Publicar la aplicación en AWS Lambda indicando el **bucket de S3** creado anteriormente.
+4. Publicar la aplicación en AWS Lambda indicando el *bucket de S3* creado anteriormente.
     #+begin_src bash
     dotnet lambda deploy-serverless
     #+end_src
