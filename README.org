@@ -179,7 +179,7 @@ Al finalizar la práctica hay que recordar *borrar todos los recursos creados en
   - Autenticación clásica usuario-password
 - Uso de [[https://en.wikipedia.org/wiki/HATEOAS][Hypermedia]] como medio de intercambio de datos entre cliente y servidor para desacoplar las dependencias entre ambos
 
-** Pasos seguidos para la creación de la aplicación (dotnet CLI)
+** COMMENT Pasos seguidos para la creación de la aplicación (dotnet CLI)
 
 #+begin_src bash
 
@@ -193,11 +193,8 @@ dotnet new sln
 Creación del proyecto
 dotnet new webapi -o api-bank-app
 
-Añadir proyecto a solució
-
-n
+Añadir proyecto a solución
 dotnet sln api-bank-app.sln add api-bank-app/api-bank-app.csproj
-
 
 Creación de archivo .gitignore
 
