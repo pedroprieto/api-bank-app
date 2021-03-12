@@ -84,6 +84,9 @@ La aplicación está realizada con [[https://dotnet.microsoft.com/download/dotne
 
 *** Prerrequisitos
     - SDK de .NET Core
+    - Servidor MySQL para prueba local
+    - Herramienta Entity Framework para .NET CLI. Podemos instalarla ejecutando:
+      - ~dotnet tool install -g dotnet-ef~
     - Extensiones de AWS para .NET CLI. En concreto, necesitaremos instalar las extensiones para ~Lambda~ y para ~ElasticaBeanstalk~:
       - ~dotnet tool install -g Amazon.ElasticBeanstalk.Tools~
       - ~dotnet tool install -g Amazon.Lambda.Tools~
