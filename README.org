@@ -80,37 +80,44 @@ Se utilizará el formato JSON para el intercambio de datos entre la API y el cli
   - Uso de [[https://es.wikipedia.org/wiki/JSON_Web_Token][JWT]] para evitar tener que almacenar el estado de la sesión en el servidor
 
 ** Instalación
-La aplicación está realizada con [[https://dotnet.microsoft.com/download/dotnet-core/3.0][.NET Core 3.0]].
+La aplicación está realizada con [[https://dotnet.microsoft.com/download/dotnet-core/3.0][ASP.NET Core 3.0]].
 
-1. Clonar repositorio
-2. Acceder a la carpeta del repositorio
-   #+begin_src bash
-    cd api-bank-app
-   #+end_src 
-3. Instalar dependencias de .NET
-   #+begin_src bash
-    dotnet restore
-   #+end_src 
-4. Instalar base de datos MySQL en el sistema. Anotar los parámetros de conexión
-5. Acceder al directorio del proyecto
-   #+begin_src bash
-    cd api-bank-app
-   #+end_src 
-6. Actualizar los datos de conexión a la base de datos local en archivo ~api-bank-app/appsettings.json~
-   #+begin_src json
-    "ConnectionStrings": {
-        "BankDatabase": "server=localhost;port=3306;user=root;password=;database=bank"
-    },
-   #+end_src 
-7. Actualizar base de datos a través de Entity Framework
-   #+begin_src bash
-    dotnet ef database update
-   #+end_src 
-8. Lanzar aplicación
-   #+begin_src bash
-    dotnet run
-   #+end_src 
-9. Acceder a la API en ~http://localhost:5000/api/clients~
+*** Prerrequisitos
+    - SDK de .NET Core
+    - Extensiones de AWS para .NET CLI. En concreto, necesitaremos instalar las extensiones para ~Lambda~ y para ~ElasticaBeanstalk~:
+      - ~dotnet tool install -g Amazon.ElasticBeanstalk.Tools~
+      - ~dotnet tool install -g Amazon.Lambda.Tools~
+      
+*** Instrucciones
+  1. Clonar repositorio
+  2. Acceder a la carpeta del repositorio
+     #+begin_src bash
+      cd api-bank-app
+     #+end_src 
+  3. Instalar dependencias de .NET
+     #+begin_src bash
+      dotnet restore
+     #+end_src 
+  4. Instalar base de datos MySQL en el sistema. Anotar los parámetros de conexión
+  5. Acceder al directorio del proyecto
+     #+begin_src bash
+      cd api-bank-app
+     #+end_src 
+  6. Actualizar los datos de conexión a la base de datos local en archivo ~api-bank-app/appsettings.json~
+     #+begin_src json
+      "ConnectionStrings": {
+          "BankDatabase": "server=localhost;port=3306;user=root;password=;database=bank"
+      },
+     #+end_src 
+  7. Actualizar base de datos a través de Entity Framework
+     #+begin_src bash
+      dotnet ef database update
+     #+end_src 
+  8. Lanzar aplicación
+     #+begin_src bash
+      dotnet run
+     #+end_src 
+  9. Acceder a la API en ~http://localhost:5000/api/clients~
 
 ** Instrucciones de despliegue
 *** AWS ElasticBeanstalk
