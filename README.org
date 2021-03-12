@@ -122,7 +122,7 @@ La aplicación está realizada con [[https://dotnet.microsoft.com/download/dotne
 ** Instrucciones de despliegue
 *** AWS ElasticBeanstalk
 1. Crear un usuario en AWS IAM para que permita el acceso mediante CLI. Para desplegar en BeanStalk será necesario concederle los siguientes permisos:
-   - ~AWSElasticBeanstalkFullAccess~
+   - ~AdministratorAccess-AWSElasticBeanstalk~
    - ~IAMFullAccess~
 2. Configurar en el equipo local las [[https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-configure.html][credenciales de acceso a AWS]] con los datos del usuario creado
 3. Instalar proyecto y dependencias de .NET
@@ -156,7 +156,7 @@ La aplicación está realizada con [[https://dotnet.microsoft.com/download/dotne
 Se supone que en este punto ya se dispone del usuario de IAM, se ha clonado el repositorio y se han instalado las dependencias de .NET. También se supone creada la base de datos en AWS RDS y que dispone de *acceso público*.
 
 1. Conceder al usuario de IAM creado los siguientes permisos en la consola de AWS:
-   - ~AWSLambdaFullAccess~
+   - ~AWSLambda_FullAccess~
    - ~AmazonAPIGatewayAdministrator~
 2. Crear un bucket en AWS S3 y anotar su nombre
 3. Crear archivo ~api-bank-app/serverless.template~ a partir del que se proporciona como ejemplo en ~api-bank-app/serverless.template.example~. Modificar la línea correspondiente a la variable de entorno ~ConnectionStrings__BankDatabase~ con los datos de acceso a la base de datos de RDS.
